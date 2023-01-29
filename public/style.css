@@ -12,20 +12,30 @@
   }
   body {
     background: #eee;
-    /* background-image: url("https://www.transparenttextures.com/patterns/skulls.png"); */
-    /* background-image:url("https://www.transparenttextures.com/patterns/weave.png"); */
-    /* background-image: url("https://www.transparenttextures.com/patterns/soft-kill.png"); */
     background-image: url("https://www.transparenttextures.com/patterns/grid-me.png");
-    /* background-image: url("https://www.transparenttextures.com/patterns/gplay.png"); */
-
     padding: 0 16px;
   }
   
   header {
+    position: relative;
     background-color: #f5ba13;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* .linkContainer{
+    position:
+  } */
+
+  .Link{
+    color: white;
+    margin-left: 10px;
+  }
+
+  .Link:hover{
+    transform: scale(1.2);
+    /* color: aqua; */
   }
   
   header h1 {

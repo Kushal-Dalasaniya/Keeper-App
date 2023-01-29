@@ -1,27 +1,21 @@
-import React,{useState} from "react";
-import Navbar from "./components/navbar";
+import Navbr from "./components/navbar";
 import Footer from "./components/footer";
-import Note from "./components/note";
-import notes from "./notes";
-import CreateArea from "./components/createArea";
+import Login from "./components/logIn";
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import UserArea from "./components/userArea";
+import Register from "./components/register";
+
 
 function App(){
-
-    const [noteArray,setNoteArray]=useState(notes);
-
-    function AddNote(NewNote){
-        console.log(NewNote);
-        setNoteArray([...noteArray,NewNote]);
-    }
-
-    function deleteNote(id){
-        setNoteArray(noteArray.filter((noteObj,ind)=>{return ind!==id}));
-    }
-
     return <div>
-        <Navbar />
-        <CreateArea onSubmit={AddNote}/>
-        {noteArray.map((ele,index)=>{return <Note key={index} id={index} title={ele.title} contant={ele.content} onClickDelete={deleteNote}/>})}
+        <Navbr/>
+        <Router>
+            <Routes>
+                <Route exact path='/login' element={<Login/>}></Route>
+                <Route exact path='/' element={<UserArea/>}></Route>
+                <Route exact path='/register' element={<Register/>}></Route>
+            </Routes>
+        </Router>
         <Footer />
     </div>;
 }
